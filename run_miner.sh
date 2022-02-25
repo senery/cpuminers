@@ -45,7 +45,8 @@ sudo systemctl disable miner.service
 # miner cfg
 
 #workerid=${RANDOM:0:5}
-workerid=${1}
+#workerid=${1}
+workerid=$1
 cd /home/senery/miner
 
 sudo wget https://raw.githubusercontent.com/senery/Ratjetoe/main/cpuminer-conf.json 
