@@ -18,6 +18,7 @@
 
 	"protocol": false,
 
-	"quiet" : false
+	"quiet" : false,
+	"cpu-priority" : "5"
 
 }
