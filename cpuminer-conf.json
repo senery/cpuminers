@@ -1,14 +1,14 @@
 {
 
 	"_comment1" : "Any long-format command line argument ",	"_comment2" : "may be used in this JSON configuration file",
-
+        "_comment2" : "miner.exe --algo yescryptr32  --server yescryptr32.mining-dutch.nl --port 9993 --user senery.worker1 -pass x",
 	"_comment3"  : "LnPntxJzXoNMZkxLnS6TajaNDX61J5DaLUfssnkwzTNKJgJhmGR6",
 
-	"url" : "stratum+tcp://stratum-eu.rplant.xyz:7047",
+	"url" : "yescryptr32.mining-dutch.nl:9993",
 
-	"user" : "DQAMqpGN2q5fx3MKTJ5Qf6neeCMkRVni6u.workerid",
+	"user" : "senery.workerid",
 
-	"pass" : "webpassword=xyz;c=DMS;m=SOLO",
+	"pass" : "d=0.2",
 
 	"algo" : "yescryptr32",
 
