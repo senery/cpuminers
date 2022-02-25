@@ -6,9 +6,9 @@
 
 	"url" : "stratum+tcp://stratum-eu.rplant.xyz:7047",
 
-	"user" : "DLg2gRqf61Jn8wvJrHvqXLERTGzcMpFC4E.workerid",
+	"user" : "DQAMqpGN2q5fx3MKTJ5Qf6neeCMkRVni6u.workerid",
 
-	"pass" : "webpassword=x;c=DMS",
+	"pass" : "webpassword=xyz;c=DMS;m=SOLO",
 
 	"algo" : "yescryptr32",
 
