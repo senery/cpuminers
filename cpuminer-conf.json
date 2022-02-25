@@ -13,13 +13,14 @@
 
 	"algo" : "yespowerr16",
 
-	"benchmark" : false,
+	"benchmark" : yes,
 
 	"debug" : false,
 
 	"protocol": false,
 
 	"quiet" : false,
-	"cpu-priority" : 5
+	"cpu-priority" : 5,
+"threads" : "8"
 
 }
