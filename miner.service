@@ -1,17 +1,9 @@
- [Unit]
-
+[Unit]
 Description=miner
-
 [Service]
-
 User=senery
-
 WorkingDirectory=/home/senery/miner
-
-ExecStart=/bin/bash -c '/home/senery/miner/cpuminer-sse2 --conf=/home/senery/miner/cpuminer-conf.json'
-
+ExecStart=/bin/bash -c '/home/senery/cpuminer/cpuminer-sse2 --conf=/home/senery/cpuminer/cpuminer-conf.json'
 Restart=always
-
 [Install]
-
 WantedBy=multi-user.target

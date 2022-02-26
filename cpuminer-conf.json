@@ -1,21 +1,17 @@
 {
 
+	"_comment1" : "Any long-format command line argument ",	
+	"_comment2" : "may be used in this JSON configuration file",
+	"_comment3"  : "LnPntxJzXoNMZkxLnS6TajaNDX61J5DaLUfssnkwzTNKJgJhmGR6",
 	"url" : "stratum+tcp://yespowerr16.mining-dutch.nl:9987",
-
 	"user" : "senery.workerid",
-
 	"pass" : "d=0.2",
-
 	"algo" : "yespowerr16",
-
-	"benchmark" : true,
-
+	"benchmark" : false,
 	"debug" : false,
-
 	"protocol": false,
-
 	"quiet" : false,
 	"cpu-priority" : 5,
-"threads" : 8
+	"threads" : 6
 
 }
