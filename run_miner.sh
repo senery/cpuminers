@@ -19,7 +19,7 @@ sudo rm -R *
 # miner dl en ex
 sudo wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.27/cpuminer-opt-linux.tar.gz
 sudo tar zxvf cpuminer-opt-linux.tar.gz
-cd /home/senery/cpuminer
+#cd /home/senery/cpuminer
 
 # nu de default miner config bijwerken etc
 sudo rm -r cpuminer-conf.json
