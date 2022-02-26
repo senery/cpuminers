@@ -5,12 +5,12 @@
 	"_comment3"  : "LnPntxJzXoNMZkxLnS6TajaNDX61J5DaLUfssnkwzTNKJgJhmGR6",
 	"url" : "stratum+tcp://yespowerr16.mining-dutch.nl:9987",
 	"user" : "senery.workerid",
-	"pass" : "d=0.2",
+	"pass" : "x",
 	"algo" : "yespowerr16",
 	"benchmark" : false,
 	"debug" : false,
 	"protocol": false,
 	"quiet" : false,
-	"cpu-priority" : 5
+	"cpu-priority" : 4
 
 }
