@@ -13,8 +13,8 @@ sudo systemctl stop miner.service
 sudo systemctl disable miner.service
 
 #clean home dir
-sudo mkdir /home/senery
-cd /home/senery
+sudo mkdir /home/ubuntu
+cd /home/ubuntu
 sudo rm -R *
 
 # miner dl en ex
