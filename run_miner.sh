@@ -13,6 +13,7 @@ sudo systemctl stop miner.service
 sudo systemctl disable miner.service
 
 #clean home dir
+sudo mkdir /home/senery
 cd /home/senery
 sudo rm -R *
 
