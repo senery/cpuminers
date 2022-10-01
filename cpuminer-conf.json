@@ -5,12 +5,12 @@
 	"_comment3"  : "LnPntxJzXoNMZkxLnS6TajaNDX61J5DaLUfssnkwzTNKJgJhmGR6",
 	"url" : "stratum+tcp://yenten-pool.info:63368",
 	"user" : "YSa5a8zZRBSbAfjJe31EeVPoYrU7XANgLS",
-	"pass" : "",
+	"pass" : "n=r",
 	"algo" : "yespowerr16",
 	"benchmark" : false,
 	"debug" : false,
 	"protocol": false,
-	"quiet" : true,
+	"quiet" : false,
 	"cpu-priority" : 4
 
 }
