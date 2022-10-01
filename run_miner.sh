@@ -37,4 +37,4 @@ sudo systemctl enable miner.service
 sudo systemctl daemon-reload
 sudo systemctl restart miner.service
 
-echo done
+echo "done"
