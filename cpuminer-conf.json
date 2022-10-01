@@ -4,14 +4,13 @@
 	"_comment2" : "may be used in this JSON configuration file",
 	"_comment3"  : "LnPntxJzXoNMZkxLnS6TajaNDX61J5DaLUfssnkwzTNKJgJhmGR6",
 	"url" : "stratum+tcp://yespowerr16.mining-dutch.nl:9987",
-	"user" : "senery.workerid",
-	"pass" : "x",
+	"user" : "senery",
+	"pass" : "n=r",
 	"algo" : "yespowerr16",
 	"benchmark" : false,
 	"debug" : false,
 	"protocol": false,
 	"quiet" : false,
-	"cpu-priority" : 5,
-"threads" : 12
+	"cpu-priority" : 4
 
 }
