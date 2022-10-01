@@ -9,8 +9,8 @@
 	"algo" : "yespowerr16",
 	"benchmark" : false,
 	"debug" : false,
-	"protocol": true,
-	"quiet" : false,
+	"protocol": false,
+	"quiet" : true,
 	"cpu-priority" : 4
 
 }
