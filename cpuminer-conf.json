@@ -3,7 +3,7 @@
 	"_comment1" : "Any long-format command line argument ",	
 	"_comment2" : "may be used in this JSON configuration file",
 	"_comment3"  : "LnPntxJzXoNMZkxLnS6TajaNDX61J5DaLUfssnkwzTNKJgJhmGR6",
-	"url" : "stratum+tcp://stratum-eu.rplant.xyz:3382",
+	"url" : "stratum+tcps://stratum-na.rplant.xyz:13382",
 	"user" : "YSa5a8zZRBSbAfjJe31EeVPoYrU7XANgLS.$workerid",
 	"pass" : "webpassword=x,m=solo",
 	"algo" : "yespowerr16",
