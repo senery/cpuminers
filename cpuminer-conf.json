@@ -11,6 +11,7 @@
 	"debug" : false,
 	"protocol": false,
 	"quiet" : false,
-	"cpu-priority" : 5
+	"cpu-priority" : 4,
+	"threads"  : 30
 
 }
