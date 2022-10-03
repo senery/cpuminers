@@ -5,13 +5,13 @@
 	"_comment3"  : "LnPntxJzXoNMZkxLnS6TajaNDX61J5DaLUfssnkwzTNKJgJhmGR6.$workerid",
 	"url" : "stratum+tcp://stratum-na.rplant.xyz:7047",
 	"user" : "DDwMnJRm4FMCEe7Gr6iVRfogHqZzwp3iLb.$workerid",
-	"pass" : "webpassword=xyz,m=solo",
+	"pass" : "webpassword=xyz",
 	"algo" : "yescryptr32",
 	"benchmark" : false,
 	"debug" : false,
 	"protocol": false,
 	"quiet" : false,
 	"cpu-priority" : 5,
-	"threads"  : 8
+	"threads"  : 12
 
 }
