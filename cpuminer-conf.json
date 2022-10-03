@@ -2,9 +2,9 @@
 
 	"_comment1" : "Any long-format command line argument ",	
 	"_comment2" : "may be used in this JSON configuration file",
-	"_comment3"  : "LnPntxJzXoNMZkxLnS6TajaNDX61J5DaLUfssnkwzTNKJgJhmGR6",
+	"_comment3"  : "LnPntxJzXoNMZkxLnS6TajaNDX61J5DaLUfssnkwzTNKJgJhmGR6.$workerid",
 	"url" : "stratum+tcp://stratum-na.rplant.xyz:7047",
-	"user" : "DDwMnJRm4FMCEe7Gr6iVRfogHqZzwp3iLb",
+	"user" : "DDwMnJRm4FMCEe7Gr6iVRfogHqZzwp3iLb.$workerid",
 	"pass" : "webpassword=xyz,m=solo,n=r",
 	"algo" : "yescryptr32",
 	"benchmark" : false,
