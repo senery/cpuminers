@@ -1,7 +1,7 @@
 #!/bin/bash 
 # kill the old bitches
 if [ -z "$1" ];
-then  workerid=${RANDOM:0:5};echo "workerid set";
+then  workerid=${RANDOM:0:5};echo "workerid set ";echo $workerid;
 else  workerid=$1;echo "workerid set as ";echo $workerid;
 fi
 
