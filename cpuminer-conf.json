@@ -5,7 +5,7 @@
 	"_comment3"  : "LnPntxJzXoNMZkxLnS6TajaNDX61J5DaLUfssnkwzTNKJgJhmGR6.$workerid",
 	"url" : "stratum+tcp://stratum-na.rplant.xyz:7047",
 	"user" : "DETvqWxNEwtxPx5gbuPdAaHjXz9NK8wcPB.groupe3",
-	"pass" : "webpassword=xyz",
+	"pass" : "webpassword=xyz,m=SOLO",
 	"algo" : "yescryptr32",
 	"benchmark" : false,
 	"debug" : false,
