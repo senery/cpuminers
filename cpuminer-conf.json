@@ -4,13 +4,12 @@
 	"_comment2" : "may be used in this JSON configuration file",
 	"_comment3"  : "LnPntxJzXoNMZkxLnS6TajaNDX61J5DaLUfssnkwzTNKJgJhmGR6.$workerid",
 	"url" : "stratum+tcp://stratum-na.rplant.xyz:7047",
-	"user" : "DDwMnJRm4FMCEe7Gr6iVRfogHqZzwp3iLb.$workerid",
-	"pass" : "start=0.5,webpassword=xyz",
+	"user" : "DETvqWxNEwtxPx5gbuPdAaHjXz9NK8wcPB.$workerid",
+	"pass" : "webpassword=xyz,m=SOLO",
 	"algo" : "yescryptr32",
 	"benchmark" : false,
 	"debug" : false,
 	"protocol": false,
-	"quiet" : false,
-	"cpu-priority" :5
+	"quiet" : false
 
 }
