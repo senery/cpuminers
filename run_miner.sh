@@ -1,6 +1,6 @@
 #!/bin/bash 
 # kill the old bitches
-if [ $1 !eq "" ] then
+if [ $1 !="" ] then
   workerid=$1
   echo "workerid set as"
   echo $1
