@@ -1,13 +1,12 @@
 #!/bin/bash 
 # kill the old bitches
-if [ $1 eq "" ] 
-then
-  workerid=${RANDOM:0:5} 
-  echo "workerid@random"
-else 
+if [ $1 !eq "" ] then
   workerid=$1
   echo "workerid set as"
   echo $1
+else 
+  workerid=${RANDOM:0:5} 
+  echo "workerid@random"
 fi
 
 #unload old runbin
