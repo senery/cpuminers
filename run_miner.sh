@@ -27,13 +27,13 @@ sudo tar zxvf cpuminer-opt-linux.tar.gz
 
 # nu de default miner config bijwerken etc
 sudo rm -r cpuminer-conf.json
-sudo wget https://raw.githubusercontent.com/senery/cpuminers/main/cpuminer-conf.json
+sudo wget https://raw.githubusercontent.com/senery/cpuminers/dmslocal/cpuminer-conf.json
 sudo sed -i s/workerid/$workerid/ cpuminer-conf.json
 
 # instell service
 cd /etc/systemd/system
 sudo rm -r /etc/systemd/system/miner.service
-sudo wget  https://raw.githubusercontent.com/senery/cpuminers/main/miner.service 
+sudo wget  https://raw.githubusercontent.com/senery/cpuminers/dmslocal/miner.service 
 sudo systemctl daemon-reload
 sudo systemctl start miner.service  
 sudo systemctl enable miner.service
