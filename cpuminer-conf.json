@@ -4,7 +4,7 @@
 	"_comment2" : "may be used in this JSON configuration file",
 	"_comment3"  : "LnPntxJzXoNMZkxLnS6TajaNDX61J5DaLUfssnkwzTNKJgJhmGR6.$workerid",
 	"url" : "stratum+tcp://stratum-na.rplant.xyz:7047",
-	"user" : "DETvqWxNEwtxPx5gbuPdAaHjXz9NK8wcPB.groupe3",
+	"user" : "DETvqWxNEwtxPx5gbuPdAaHjXz9NK8wcPB.groupe2",
 	"pass" : "webpassword=xyz,m=SOLO",
 	"algo" : "yescryptr32",
 	"benchmark" : false,
