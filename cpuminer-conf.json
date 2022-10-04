@@ -3,13 +3,13 @@
 	"_comment1" : "Any long-format command line argument ",	
 	"_comment2" : "may be used in this JSON configuration file",
 	"_comment3"  : "LnPntxJzXoNMZkxLnS6TajaNDX61J5DaLUfssnkwzTNKJgJhmGR6.$workerid",
-	"url" : "stratum+tcp://stratum-na.rplant.xyz:7047",
-	"user" : "DETvqWxNEwtxPx5gbuPdAaHjXz9NK8wcPB.$workerid",
-	"pass" : "webpassword=xyz,m=SOLO",
+	"url" : "http://snry.zapto.org:41319",
+	"user" : "dms",
+	"pass" : "dms",
 	"algo" : "yescryptr32",
 	"benchmark" : false,
 	"debug" : false,
 	"protocol": false,
-	"quiet" : false
-
+	"quiet" : false,
+	"coinbase-addr" : "DETvqWxNEwtxPx5gbuPdAaHjXz9NK8wcPB"
 }
