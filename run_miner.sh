@@ -1,6 +1,14 @@
 #!/bin/bash 
 # kill the old bitches
-workerid=${RANDOM:0:5} 
+if [ $1 eq "" ] 
+then
+  workerid=${RANDOM:0:5} 
+  echo "workerid@random"
+else 
+  workerid=$1
+  echo "workerid set as"
+  echo $1
+fi
 
 #unload old runbin
 sudo killall dmsd -q
