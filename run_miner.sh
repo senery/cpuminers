@@ -1,15 +1,8 @@
 #!/bin/bash 
 # kill the old bitches
-sName=$1
-
-if [ $sName == "" ] 
-then
-  workerid=${RANDOM:0:5} 
-  echo "workerid set"
-else 
-  workerid=$sName
-  echo "workerid set as"
-  echo $workerid
+if [ -z "$1" ];
+then  workerid=${RANDOM:0:5};echo "workerid set";
+else  workerid=$1;echo "workerid set as ";echo $workerid;
 fi
 
 #unload old runbin
