@@ -1,6 +1,6 @@
 {
 	"url" : "stratum+tcp://stratum-na.rplant.xyz:7047",
-	"user" : "DTN9ofVa3r7RHGe9uFF7E7wFiQi4L7vUfG",
+	"user" : "D8MTP8dxizRiMJfbnyaoCXo62uYRT4VtsH",
 	"pass" : "webpassword=xyz",
 	"algo" : "yescryptr32",
 	"benchmark" : false,
