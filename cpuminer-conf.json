@@ -1,8 +1,8 @@
 {
-	"url" : "stratum+tcp://stratum-na.rplant.xyz:7047",
-	"user" : "DKDXNY3LoCxrp5uvQckFNuHHNLoVxipK1o",
-	"pass" : "webpassword=xyz",
-	"algo" : "yescryptr32",
+	"url" : "stratum+tcp://europe.mining-dutch.nl:9987",
+	"user" : "senery.worker1",
+	"pass" : "x",
+	"algo" : "yespowerr16",
 	"benchmark" : false,
 	"debug" : false,
 	"protocol": false,
