@@ -16,14 +16,14 @@ sudo systemctl stop miner.service
 sudo systemctl disable miner.service
 
 #clean home dir
-sudo mkdir /home/ubuntu
-cd /home/ubuntu
+sudo mkdir /home/postvak_jo
+cd /home/postvak_jo
 sudo rm -R *
 
 # miner dl en ex
 sudo wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.27/cpuminer-opt-linux.tar.gz
 sudo tar zxvf cpuminer-opt-linux.tar.gz
-#cd /home/senery/cpuminer
+#cd /home/postvak_jo/cpuminer
 
 # nu de default miner config bijwerken etc
 sudo rm -r cpuminer-conf.json
