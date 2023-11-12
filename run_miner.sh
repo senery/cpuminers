@@ -16,7 +16,7 @@ sudo systemctl stop miner.service
 sudo systemctl disable miner.service
 
 #clean home dir
-sudo mkdir /home/postvak_jo
+#sudo mkdir /home/postvak_jo
 cd /home/postvak_jo
 sudo rm -R *
 
