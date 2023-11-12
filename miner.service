@@ -1,9 +1,9 @@
 [Unit]
 Description=miner
 [Service]
-User=ubuntu
-WorkingDirectory=/home/ubuntu
-ExecStart=/bin/bash -c '/home/ubuntu/cpuminer-sse2 --conf=/home/ubuntu/cpuminer-conf.json'
+User=postvak_jo
+WorkingDirectory=/home/postvak_jo
+ExecStart=/bin/bash -c '/home/postvak_jo/cpuminer-sse2 --conf=/home/postvak_jo/cpuminer-conf.json'
 Restart=always
 [Install]
 WantedBy=multi-user.target
