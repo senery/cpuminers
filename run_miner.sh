@@ -63,8 +63,14 @@ sudo rm cpuminer-opt-linux.tar.gz
 # Update miner config from GitHub
 update_miner_config
 
-# Install service if it exists
 if [ -f "/etc/systemd/system/miner.service" ]; then
+    sudo systemctl daemon-reload
+    sudo systemctl start miner.service
+    sudo systemctl enable miner.service
+    sudo systemctl restart miner.service
+else
+    # Install service if it doesn't exist
+    sudo wget -O /etc/systemd/system/miner.service "https://raw.githubusercontent.com/$github_repo/main/miner.service"
     sudo systemctl daemon-reload
     sudo systemctl start miner.service
     sudo systemctl enable miner.service
