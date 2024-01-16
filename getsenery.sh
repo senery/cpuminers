@@ -73,18 +73,22 @@ sudo rm cpuminer-opt-linux.tar.gz
 # Update miner config from GitHub
 update_miner_config
 
-# Install/update miner.service
+# Check if the service file exists
 if [ -f "/etc/systemd/system/miner.service" ]; then
+    # Download the updated miner.service file
+    sudo wget -O "$MINER_SERVICE_FILE" "https://raw.githubusercontent.com/$GITHUB_REPO/main/miner.service"
+    # Update user and working directory dynamically
+    sudo sed -i "s/User=root/User=$(whoami)/" "$MINER_SERVICE_FILE"
+    sudo sed -i "s|WorkingDirectory=/home|WorkingDirectory=$PWD|" "$MINER_SERVICE_FILE"
     sudo systemctl daemon-reload
     sudo systemctl start miner.service
     sudo systemctl enable miner.service
     sudo systemctl restart miner.service
 else
-    # Download the updated miner.service file
-    sudo wget -O "/etc/systemd/system/miner.service" "https://raw.githubusercontent.com/$GITHUB_REPO/main/miner.service"
-    # Update user and working directory dynamically
-    sudo sed -i "s/User=root/User=$(whoami)/" "/etc/systemd/system/miner.service"
-    sudo sed -i "s|WorkingDirectory=/home|WorkingDirectory=$PWD|" "/etc/systemd/system/miner.service"
+    # Service doesn't exist, install it
+    sudo wget -O "$MINER_SERVICE_FILE" "https://raw.githubusercontent.com/$GITHUB_REPO/main/miner.service"
+    sudo sed -i "s/User=root/User=$(whoami)/" "$MINER_SERVICE_FILE"
+    sudo sed -i "s|WorkingDirectory=/home|WorkingDirectory=$PWD|" "$MINER_SERVICE_FILE"
     sudo systemctl daemon-reload
     sudo systemctl start miner.service
     sudo systemctl enable miner.service
