@@ -1,3 +1,4 @@
+#!/bin/bash
 ## Constants
 MINE_PATH="$HOME/mijn"
 GITHUB_REPO="senery/cpuminers"
@@ -35,7 +36,7 @@ update_miner_config() {
         # Read worker ID from file
         workerid=$(cat "$WORKERID_FILE")
     fi
-    # Replace workerid in config
+#!/bin/bash#!/bin/bash    # Replace workerid in config
     sudo sed -i "s/workerid/$workerid/" "$CONFIG_FILENAME"
 }
 
