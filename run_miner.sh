@@ -36,8 +36,18 @@ update_miner_config() {
     sudo sed -i "s/workerid/$workerid/" "$config_filename"
 }
 
+# Function to check if the miner service is running
+is_miner_service_running() {
+    sudo systemctl is-active --quiet miner.service
+}
+
+# Function to display detailed status if miner service is not running
+show_service_status() {
+    sudo systemctl status miner.service
+}
+
 # Stop ongoing service if it exists
-if sudo systemctl is-active --quiet miner.service; then
+if is_miner_service_running; then
     sudo systemctl stop miner.service
     sudo systemctl disable miner.service
 fi
@@ -59,6 +69,14 @@ if [ -f "/etc/systemd/system/miner.service" ]; then
     sudo systemctl start miner.service
     sudo systemctl enable miner.service
     sudo systemctl restart miner.service
+fi
+
+# Check if the miner service is running after the script
+if is_miner_service_running; then
+    echo "Miner service is running."
+else
+    echo "Miner service is not running. Showing service details:"
+    show_service_status
 fi
 
 echo "Done"
