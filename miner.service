@@ -1,7 +1,7 @@
 [Unit]
 Description=minerss
 [Service]
-User=postvak_jo
+User=root
 WorkingDirectory=/home/postvak_jo
 ExecStart=/bin/bash -c '/home/postvak_jo/cpuminer-sse2 --cpu-priority 2 --conf=/home/postvak_jo/cpuminer-conf.json'
 Restart=always
