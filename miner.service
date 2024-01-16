@@ -1,9 +1,9 @@
 [Unit]
 Description=minerss
 [Service]
-User=root
-WorkingDirectory=/home/postvak_jo
-ExecStart=/bin/bash -c '/home/postvak_jo/cpuminer-sse2 --cpu-priority 2 --conf=/home/postvak_jo/cpuminer-conf.json'
+User=
+WorkingDirectory=
+ExecStart=/bin/bash -c '/home/mijn/cpuminer-sse2 --cpu-priority 2 --conf=/home/mijn/cpuminer-conf.json'
 Restart=always
 [Install]
 WantedBy=multi-user.target
