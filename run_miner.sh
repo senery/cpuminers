@@ -1,43 +1,57 @@
-#!/bin/bash 
-# kill the old bitches
-if [ -z "$1" ];
-then  workerid=${RANDOM:0:5};echo "workerid set ";echo $workerid;
-else  workerid=$1;echo "workerid set as ";echo $workerid;
-fi
+#!/bin/bash
 
-#unload old runbin
-sudo killall dmsd -q
-sudo killall cpuminer -q
-sudo killall cpuminer-avx2 -q
-sudo killall cpuminer-sse2 -q
+# Define variables
+mijnpath="$HOME/mijn"
+github_repo="senery/cpuminers"
+config_filename="cpuminer-conf.json"
+workerid_file="$mijnpath/workerid.txt"
 
-#stop ongoing service
+# Function to stop and kill processes
+stop_and_kill_processes() {
+    sudo killall -q dmsd cpuminer cpuminer-avx2 cpuminer-sse2
+}
+
+# Function to clean home directory
+clean_home_directory() {
+    cd "$mijnpath" || exit
+    sudo rm -R *
+}
+
+# Function to update the miner config from GitHub
+update_miner_config() {
+    sudo wget -O "$config_filename" "https://raw.githubusercontent.com/$github_repo/main/$config_filename"
+    # Prompt user for a new worker ID if it doesn't exist
+    if [ ! -f "$workerid_file" ]; then
+        read -p "Enter worker ID for the first time: " workerid
+        echo "$workerid" > "$workerid_file"
+    else
+        # Read worker ID from file
+        workerid=$(cat "$workerid_file")
+    fi
+    # Replace workerid in config
+    sudo sed -i "s/workerid/$workerid/" "$config_filename"
+}
+
+# Stop ongoing service
 sudo systemctl stop miner.service
 sudo systemctl disable miner.service
 
-#clean home dir
-#sudo mkdir /home/postvak_jo
-cd /home/postvak_jo
-sudo rm -R *
+# Clean home directory
+clean_home_directory
 
-# miner dl en ex
-sudo wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.27/cpuminer-opt-linux.tar.gz
+# Download and extract the miner
+sudo wget -O cpuminer-opt-linux.tar.gz "https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.27/cpuminer-opt-linux.tar.gz"
 sudo tar zxvf cpuminer-opt-linux.tar.gz
-#cd /home/postvak_jo/cpuminer
+sudo rm cpuminer-opt-linux.tar.gz
 
-# nu de default miner config bijwerken etc
-sudo rm -r cpuminer-conf.json
-sudo wget https://raw.githubusercontent.com/senery/cpuminers/main/cpuminer-conf.json
-sudo sed -i s/workerid/$workerid/ cpuminer-conf.json
+# Update miner config from GitHub
+update_miner_config
 
-# instell service
-cd /etc/systemd/system
-sudo rm -r /etc/systemd/system/miner.service
-sudo wget  https://raw.githubusercontent.com/senery/cpuminers/main/miner.service 
+# Install service
+sudo wget -O /etc/systemd/system/miner.service "https://raw.githubusercontent.com/$github_repo/main/miner.service"
 sudo systemctl daemon-reload
-sudo systemctl start miner.service  
+sudo systemctl start miner.service
 sudo systemctl enable miner.service
-sudo systemctl daemon-reload
 sudo systemctl restart miner.service
 
-echo "done"
+echo "Done"
