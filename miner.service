@@ -1,6 +1,6 @@
 [Unit]
 Description=trommel
-user=root
+User=root
 [Service]
 WorkingDirectory=/home
 ExecStart=/bin/bash -c "cd $HOME/mijn && $HOME/mijn/cpuminer-sse2 --cpu-priority 2 --conf=$HOME/mijn/cpuminer-conf.json"
