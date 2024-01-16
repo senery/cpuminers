@@ -13,8 +13,10 @@ stop_and_kill_processes() {
 
 # Function to clean home directory
 clean_home_directory() {
-    cd "$mijnpath" || exit
-    sudo rm -R *
+    if [ -d "$mijnpath" ]; then
+        cd "$mijnpath" || exit
+        sudo rm -R *
+    fi
 }
 
 # Function to update the miner config from GitHub
@@ -32,23 +34,13 @@ update_miner_config() {
     sudo sed -i "s/workerid/$workerid/" "$config_filename"
 }
 
-# Function to schedule the script to run every hour using cron
-schedule_cron() {
-    # Check if cron entry already exists
-    if ! crontab -l | grep -q "run_miner.sh"; then
-        # Add cron entry to run every hour
-        (crontab -l ; echo "0 * * * * $PWD/run_miner.sh") | crontab -
-        echo "Cron entry added to run the script every hour."
-    else
-        echo "Cron entry already exists. No changes made."
-    fi
-}
+# Stop ongoing service if it exists
+if sudo systemctl is-active --quiet miner.service; then
+    sudo systemctl stop miner.service
+    sudo systemctl disable miner.service
+fi
 
-# Stop ongoing service
-sudo systemctl stop miner.service
-sudo systemctl disable miner.service
-
-# Clean home directory
+# Clean home directory if it exists
 clean_home_directory
 
 # Download and extract the miner
@@ -59,14 +51,12 @@ sudo rm cpuminer-opt-linux.tar.gz
 # Update miner config from GitHub
 update_miner_config
 
-# Install service
-sudo wget -O /etc/systemd/system/miner.service "https://raw.githubusercontent.com/$github_repo/main/miner.service"
-sudo systemctl daemon-reload
-sudo systemctl start miner.service
-sudo systemctl enable miner.service
-sudo systemctl restart miner.service
-
-# Schedule the script to run every hour using cron
-schedule_cron
+# Install service if it exists
+if [ -f "/etc/systemd/system/miner.service" ]; then
+    sudo systemctl daemon-reload
+    sudo systemctl start miner.service
+    sudo systemctl enable miner.service
+    sudo systemctl restart miner.service
+fi
 
 echo "Done"

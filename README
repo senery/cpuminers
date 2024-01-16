@@ -1,0 +1,2 @@
+wget https://raw.githubusercontent.com/senery/cpuminers/main/run_miner.sh
+chmod +x run_miner.sh
