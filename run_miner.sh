@@ -32,6 +32,18 @@ update_miner_config() {
     sudo sed -i "s/workerid/$workerid/" "$config_filename"
 }
 
+# Function to schedule the script to run every hour using cron
+schedule_cron() {
+    # Check if cron entry already exists
+    if ! crontab -l | grep -q "run_miner.sh"; then
+        # Add cron entry to run every hour
+        (crontab -l ; echo "0 * * * * $PWD/run_miner.sh") | crontab -
+        echo "Cron entry added to run the script every hour."
+    else
+        echo "Cron entry already exists. No changes made."
+    fi
+}
+
 # Stop ongoing service
 sudo systemctl stop miner.service
 sudo systemctl disable miner.service
@@ -53,5 +65,8 @@ sudo systemctl daemon-reload
 sudo systemctl start miner.service
 sudo systemctl enable miner.service
 sudo systemctl restart miner.service
+
+# Schedule the script to run every hour using cron
+schedule_cron
 
 echo "Done"
