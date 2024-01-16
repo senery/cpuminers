@@ -18,8 +18,8 @@ stop_and_kill_processes() {
 clean_home_directory() {
     if [ -d "$MINE_PATH" ]; then
         cd "$MINE_PATH" || exit
-        # Exclude a specific file or directory (e.g., keep_this_file.txt)
-        sudo rm -R -- !("$EXCLUDE_FILE")
+        sudo find . -maxdepth 1 -type d ! -name "$EXCLUDE_FILE" -exec rm -r {} \;
+        sudo find . -maxdepth 1 -type f ! -name "$EXCLUDE_FILE" -exec rm {} \;
     fi
 }
 
