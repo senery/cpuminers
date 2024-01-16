@@ -6,7 +6,7 @@ GITHUB_REPO="senery/cpuminers"
 CONFIG_FILENAME="cpuminer-conf.json"
 WORKERID_FILE="$MINE_PATH/workerid.txt"
 MINER_SERVICE_FILE="$MINE_PATH/miner.service"
-EXCLUDE_FILE="getsenery.sh"  # Add the name of the file or directory you want to exclude
+EXCLUDE_FILE="$MINE_PATH/getsenery.sh"  # Add the name of the file or directory you want to exclude
 LOG_FILE="$HOME/miner_installation.log"
 
 # Function to stop and kill processes
