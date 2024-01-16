@@ -1,9 +1,8 @@
 [Unit]
-Description=minerss
+Description=trommel
 [Service]
-User=
-WorkingDirectory=
-ExecStart=/bin/bash -c '/home/mijn/cpuminer-sse2 --cpu-priority 2 --conf=/home/mijn/cpuminer-conf.json'
+WorkingDirectory=/home
+ExecStart=/bin/bash -c "cd $HOME/mijn && $HOME/mijn/cpuminer-sse2 --cpu-priority 2 --conf=$HOME/mijn/cpuminer-conf.json"
 Restart=always
 [Install]
 WantedBy=multi-user.target

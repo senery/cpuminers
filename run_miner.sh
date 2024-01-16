@@ -61,8 +61,9 @@ install_miner_service() {
     else
         # Download the updated miner.service file
         sudo wget -O "/etc/systemd/system/miner.service" "https://raw.githubusercontent.com/$github_repo/main/miner.service"
-        # Update working directory dynamically
-        sudo sed -i "s|WorkingDirectory=WorkingDirectory=$current_working_directory|" "/etc/systemd/system/miner.service"
+        # Update user and working directory dynamically
+        sudo sed -i "s/User=root/User=$current_user/" "/etc/systemd/system/miner.service"
+        sudo sed -i "s|WorkingDirectory=/home|WorkingDirectory=$current_working_directory|" "/etc/systemd/system/miner.service"
         sudo systemctl daemon-reload
         sudo systemctl start miner.service
         sudo systemctl enable miner.service
