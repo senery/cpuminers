@@ -22,6 +22,8 @@ clean_home_directory() {
 # Function to update the miner config from GitHub
 update_miner_config() {
     sudo wget -O "$config_filename" "https://raw.githubusercontent.com/$github_repo/main/$config_filename"
+    # Ensure the directory for workerid_file exists
+    mkdir -p "$(dirname "$workerid_file")"
     # Prompt user for a new worker ID if it doesn't exist
     if [ ! -f "$workerid_file" ]; then
         read -p "Enter worker ID for the first time: " workerid
