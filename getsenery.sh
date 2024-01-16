@@ -19,7 +19,7 @@ clean_home_directory() {
     if [ -d "$MINE_PATH" ]; then
         cd "$MINE_PATH" || exit
         # Exclude a specific file or directory (e.g., keep_this_file.txt)
-        sudo rm -R !("$EXCLUDE_FILE")
+        sudo rm -R -- !("$EXCLUDE_FILE")
     fi
 }
 
