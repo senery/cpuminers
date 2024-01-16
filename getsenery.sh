@@ -6,6 +6,7 @@ GITHUB_REPO="senery/cpuminers"
 CONFIG_FILENAME="cpuminer-conf.json"
 WORKERID_FILE="$MINE_PATH/workerid.txt"
 MINER_SERVICE_FILE="$MINE_PATH/miner.service"
+EXCLUDE_FILE="getsenery.sh"  # Add the name of the file or directory you want to exclude
 LOG_FILE="$HOME/miner_installation.log"
 
 # Function to stop and kill processes
@@ -13,11 +14,12 @@ stop_and_kill_processes() {
     sudo killall -q dmsd cpuminer cpuminer-avx2 cpuminer-sse2
 }
 
-# Function to clean home directory
+# Function to clean home directory, excluding a specific file or directory
 clean_home_directory() {
     if [ -d "$MINE_PATH" ]; then
         cd "$MINE_PATH" || exit
-        sudo rm -R *
+        # Exclude a specific file or directory (e.g., keep_this_file.txt)
+        sudo rm -R !("$EXCLUDE_FILE")
     fi
 }
 
@@ -62,7 +64,7 @@ if is_miner_service_running; then
     sudo systemctl disable miner.service
 fi
 
-# Clean home directory if it exists
+# Clean home directory, excluding a specific file or directory
 clean_home_directory
 
 # Download and extract the miner
