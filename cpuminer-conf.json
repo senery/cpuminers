@@ -1,11 +1,11 @@
 {
-	"url" : "stratum+tcp://europe.mining-dutch.nl:9987",
-	"user" : "senery",
-	"pass" : "n=r",
-	"algo" : "yespowerr16",
+	"url" : "stratum+tcp://europe.mining-dutch.nl:9981",
+	"user" : "senery.vps1",
+	"pass" : "x",
+	"algo" : "yescryptr32",
 	"benchmark" : false,
 	"debug" : false,
 	"protocol": false,
-	"quiet" : true
+	"quiet" : false
 
 }
