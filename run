@@ -2,3 +2,4 @@ sudo wget -O cpuminer-opt-linux.tar.gz "https://github.com/rplant8/cpuminer-opt-
 sudo tar zxvf cpuminer-opt-linux.tar.gz
 sudo rm cpuminer-opt-linux.tar.gz
 sudo wget https://raw.githubusercontent.com/senery/cpuminers/main/cpuminer-conf.json
+./cpuminer-sse2 --config=cpuminer-conf.json
