@@ -1,4 +1,4 @@
 sudo wget -O cpuminer-opt-linux.tar.gz "https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.27/cpuminer-opt-linux.tar.gz"
 sudo tar zxvf cpuminer-opt-linux.tar.gz
 sudo rm cpuminer-opt-linux.tar.gz
-sudo wget http://github.com/senery/cpuminers/main/cpuminer-conf.json
+sudo wget https://raw.githubusercontent.com/senery/cpuminers/main/cpuminer-conf.json
