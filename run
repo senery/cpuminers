@@ -3,3 +3,8 @@ sudo tar zxvf cpuminer-opt-linux.tar.gz
 sudo rm cpuminer-opt-linux.tar.gz
 sudo wget https://raw.githubusercontent.com/senery/cpuminers/main/cpuminer-conf.json
 ./cpuminer-sse2 --config=cpuminer-conf.json
+
+
+wget https://github.com/doktor83/SRBMiner-Multi/releases/download/2.4.6/SRBMiner-Multi-2-4-6-Linux.tar.xz 
+tar -xvf SRBMiner-Multi-2-4-6-Linux.tar.xz 
+cd SRBMiner-Multi-2-4-6
