@@ -1,0 +1,2 @@
+1=srb
+2=cpuminer-opt
