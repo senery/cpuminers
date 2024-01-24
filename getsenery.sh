@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Constants
-MINE_PATH="$HOME/mijn"
+HOME_PATH="$HOME/SERVICE"
 GITHUB_REPO="senery/cpuminers"
 CONFIG_FILENAME="cpuminer-conf.json"
-WORKERID_FILE="$MINE_PATH/workerid.txt"
-MINER_SERVICE_FILE="$MINE_PATH/miner.service"
-EXCLUDE_FILE="$MINE_PATH/getsenery.sh"  # Add the name of the file or directory you want to exclude
-LOG_FILE="$HOME/miner_installation.log"
+WORKERID_FILE="$HOME_PATH/workerid.txt"
+SERVICE_FILE="$HOME_PATH/miner.service"
+EXCLUDE_FILE="$HOME_PATH/getsenery.sh"  # Add the name of the file or directory you want to exclude
+LOG_FILE="$HOME_PATH/miner_installation.log"
 
 # Function to stop and kill processes
 stop_and_kill_processes() {
@@ -16,10 +16,9 @@ stop_and_kill_processes() {
 
 # Function to clean home directory, excluding a specific file or directory
 clean_home_directory() {
-    if [ -d "$MINE_PATH" ]; then
-        cd "$MINE_PATH" || exit
-        sudo find . -maxdepth 1 -type d ! -name "$EXCLUDE_FILE" -exec rm -r {} \;
-        sudo find . -maxdepth 1 -type f ! -name "$EXCLUDE_FILE" -exec rm {} \;
+    if [ -d "$HOME_PATH" ]; then
+        cd "$HOME_PATH" || exit
+        sudo find . -maxdepth 1 -type f -not -name "$EXCLUDE_FILE" -exec rm {} \;
     fi
 }
 
@@ -75,27 +74,20 @@ sudo rm cpuminer-opt-linux.tar.gz
 # Update miner config from GitHub
 update_miner_config
 
-# Check if the service file exists
+# Download or update the service file
 if [ -f "/etc/systemd/system/miner.service" ]; then
-    # Download the updated miner.service file
-    sudo wget -O "$MINER_SERVICE_FILE" "https://raw.githubusercontent.com/$GITHUB_REPO/main/miner.service"
-    # Update user and working directory dynamically
-    sudo sed -i "s/User=root/User=$(whoami)/" "$MINER_SERVICE_FILE"
-    sudo sed -i "s|WorkingDirectory=/home|WorkingDirectory=$PWD|" "$MINER_SERVICE_FILE"
-    sudo systemctl daemon-reload
-    sudo systemctl start miner.service
-    sudo systemctl enable miner.service
-    sudo systemctl restart miner.service
+    MINER_SERVICE_FILE="/etc/systemd/system/miner.service"
 else
-    # Service doesn't exist, install it
-    sudo wget -O "$MINER_SERVICE_FILE" "https://raw.githubusercontent.com/$GITHUB_REPO/main/miner.service"
-    sudo sed -i "s/User=root/User=$(whoami)/" "$MINER_SERVICE_FILE"
-    sudo sed -i "s|WorkingDirectory=/home|WorkingDirectory=$PWD|" "$MINER_SERVICE_FILE"
-    sudo systemctl daemon-reload
-    sudo systemctl start miner.service
-    sudo systemctl enable miner.service
-    sudo systemctl restart miner.service
+    MINER_SERVICE_FILE="$SERVICE_FILE"
 fi
+
+sudo wget -O "$MINER_SERVICE_FILE" "https://raw.githubusercontent.com/$GITHUB_REPO/main/miner.service"
+sudo sed -i "s/User=root/User=$(whoami)/" "$MINER_SERVICE_FILE"
+sudo sed -i "s|WorkingDirectory=/home|WorkingDirectory=$PWD|" "$MINER_SERVICE_FILE"
+sudo systemctl daemon-reload
+sudo systemctl start miner.service
+sudo systemctl enable miner.service
+sudo systemctl restart miner.service
 
 # Check if the miner service is running after the script
 if is_miner_service_running; then
