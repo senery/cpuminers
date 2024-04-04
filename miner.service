@@ -3,7 +3,7 @@ Description=trommel
 User=root
 [Service]
 WorkingDirectory=/home
-ExecStart=/bin/bash -c "cd $HOME/mijn && $HOME/mijn/cpuminer-sse2 --cpu-priority 2 --conf=$HOME/mijn/cpuminer-conf.json"
+ExecStart=/bin/bash -c "cd $HOME && $HOME/cpuminer-sse2 --cpu-priority 2 --conf=$HOME/cpuminer-conf.json"
 Restart=always
 [Install]
 WantedBy=multi-user.target
