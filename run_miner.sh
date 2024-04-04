@@ -5,7 +5,7 @@ current_user=$(whoami)
 current_working_directory=$(pwd)
 
 # Define variables
-mijnpath="$HOME/mijn"
+mijnpath="$HOME"
 github_repo="senery/cpuminers"
 config_filename="cpuminer-conf.json"
 workerid_file="$mijnpath/workerid.txt"
